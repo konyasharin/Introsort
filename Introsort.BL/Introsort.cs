@@ -29,8 +29,13 @@
         /// <param name="depthLimit">Глубина рекурсии.</param>
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
         /// <param name="key">Функция для вычисления ключа, по которому происходит сортировка.</param>
-        public static void IntrosortLoop(int[] a, int start, int end, int depthLimit, bool reverse = false, Delegate? key = null)
+        /// <param name="cmp">Функция для сравнения двух значений при сортировке</param>
+        public static void IntrosortLoop<T>(T[] a, int start, int end, int depthLimit, bool reverse = false, Delegate? key = null, Comparison<T>? cmp = null)
         {
+            if (cmp == null)
+            {
+                cmp = Compares.Instance.Compare;
+            }
             if (end - start > MaxCountNumbers)
             {
                 if(depthLimit == 0)
@@ -39,13 +44,13 @@
                     return; 
                 }
                 depthLimit--;
-                int pivot = Partition(a, start, end, reverse);
-                IntrosortLoop(a, 0, pivot - 1, depthLimit, reverse);
-                IntrosortLoop(a, pivot + 1, end, depthLimit, reverse);
+                int pivot = Partition(a, start, end, reverse, cmp: cmp);
+                IntrosortLoop(a, 0, pivot - 1, depthLimit, reverse, cmp: cmp);
+                IntrosortLoop(a, pivot + 1, end, depthLimit, reverse, cmp: cmp);
             }
             else
             {
-                InsertionSort(a, start, end, reverse);
+                InsertionSort(a, start, end, reverse, cmp: cmp);
             }
         }
 
@@ -57,25 +62,26 @@
         /// <param name="start">Начальный индекс для сортировки.</param>
         /// <param name="end">Конечный индекс для сортировки.</param>
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
+        /// <param name="cmp">Функция для сравнения двух значений при сортировке</param>
         /// <returns>Индекс опорного элемента pivot.</returns>
-        public static int Partition(int[] a, int start, int end, bool reverse = false)
+        public static int Partition<T>(T[] a, int start, int end, bool reverse = false, Comparison<T>? cmp = null)
         {
-            int pivot = a[end];
+            T pivot = a[end];
             int i = start - 1;
 
             for(int j = start; j <= end - 1; j++)
             {
-                if (a[j] < pivot && reverse is false || a[j] >= pivot && reverse)
+                if (cmp!(a[j], pivot) < 0 && reverse is false || cmp(a[j], pivot) >= 0 && reverse)
                 {
                     i++;
-                    int keepVariable = a[i];
+                    T keepVariable = a[i];
                     a[i] = a[j];
                     a[j] = keepVariable;
                 }
                 if(j == end - 1)
                 {
                     i++;
-                    int keepVariable = a[i];
+                    T keepVariable = a[i];
                     a[i] = a[end];
                     a[end] = keepVariable;
                 }
@@ -90,10 +96,11 @@
         /// <param name="start">Индекс элемента, с которого начинаем сортировку.</param>
         /// <param name="end">Индекс элемента, которым заканчивается сортировка.</param>
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
-        public static void HeapSort(int[] a, int start, int end, bool reverse = false)
+        /// <param name="cmp">Функция для сравнения двух значений при сортировке.</param>
+        public static void HeapSort<T>(T[] a, int start, int end, bool reverse = false, Comparison<T>? cmp = null)
         {
             int n = end - start + 1;
-            int[] newArray = new int[n];
+            T[] newArray = new T[n];
             int j = 0;
             for (int i = start; i <= end; i++)
             {
@@ -104,16 +111,16 @@
             // Создание дерева
             for (int i = n / 2 - 1; i >= 0; i--)
             {
-                Heapify(newArray, i, n, reverse);
+                Heapify(newArray, i, n, reverse, cmp: cmp);
             }
 
             // Сортировка массива
             for (int i = n - 1; i >= 0; i--)
             {
-                int keepElement = newArray[i];
+                T keepElement = newArray[i];
                 newArray[i] = newArray[0];
                 newArray[0] = keepElement;
-                Heapify(newArray, 0, i, reverse);
+                Heapify(newArray, 0, i, reverse, cmp: cmp);
             }
 
             // В старый массив вносим изменения
@@ -132,31 +139,32 @@
         /// <param name="i">Текущая вершина дерева.</param>
         /// <param name="n">Размер массива(дерева).</param>
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
-        private static void Heapify(int[] a, int i, int n, bool reverse = false)
+        /// <param name="cmp">Функция для сравнения двух значений при сортировке.</param>
+        private static void Heapify<T>(T[] a, int i, int n, bool reverse = false, Comparison<T>? cmp = null)
         {
             int leftElementIndex = i * 2 + 1;
             int rightElementIndex = i * 2 + 2;
             int largestIndex = i;
 
-            if((leftElementIndex < n && a[leftElementIndex] > a[largestIndex] && reverse is false) ||
-                (leftElementIndex < n && a[leftElementIndex] < a[largestIndex] && reverse))
+            if((leftElementIndex < n && cmp!(a[leftElementIndex], a[largestIndex]) > 0 && reverse is false) ||
+                (leftElementIndex < n && cmp!(a[leftElementIndex], a[largestIndex]) < 0 && reverse))
             {
                 largestIndex = leftElementIndex;
             }
 
-            if((rightElementIndex < n && a[rightElementIndex] > a[largestIndex] && reverse is false) ||
-                (rightElementIndex < n && a[rightElementIndex] < a[largestIndex] && reverse))
+            if((rightElementIndex < n && cmp!(a[rightElementIndex], a[largestIndex]) > 0 && reverse is false) ||
+                (rightElementIndex < n && cmp!(a[rightElementIndex], a[largestIndex]) < 0 && reverse))
             {
                 largestIndex = rightElementIndex;
             }
 
             if(i != largestIndex)
             {
-                int keepElement = a[i];
+                T keepElement = a[i];
                 a[i] = a[largestIndex];
                 a[largestIndex] = keepElement;
 
-                Heapify(a, largestIndex, n, reverse);
+                Heapify(a, largestIndex, n, reverse, cmp: cmp);
             }
         }
 
@@ -167,14 +175,15 @@
         /// <param name="start">Индекс элемента, с которого начинается сортировка.</param>
         /// <param name="end">Индекс элемента, которым заканчивается сортировка.</param>
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
-        public static void InsertionSort(int[] a, int start, int end, bool reverse = false)
+        /// <param name="cmp">Функция для сравнения двух значений при сортировке.</param>
+        public static void InsertionSort<T>(T[] a, int start, int end, bool reverse = false, Comparison<T>? cmp = null)
         {
             for(int i = start + 1; i <= end; i++)
             {
-                int currentElement = a[i];
+                T currentElement = a[i];
                 int j = i;
-                while ((j > 0 && a[j - 1] > currentElement && reverse is false) ||
-                    (j > 0 && a[j - 1] < currentElement && reverse)) 
+                while ((j > 0 && cmp!(a[j - 1], currentElement) > 0 && reverse is false) ||
+                    (j > 0 && cmp!(a[j - 1], currentElement) < 0 && reverse)) 
                 {
                     a[j] = a[j - 1];
                     j--;

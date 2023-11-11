@@ -9,3 +9,14 @@ C:\Users\kolec\source\repos\Introsort.BL\Introsort.BL\obj\Debug\net6.0\Introsort
 C:\Users\kolec\source\repos\Introsort.BL\Introsort.BL\obj\Debug\net6.0\refint\Introsort.BL.dll
 C:\Users\kolec\source\repos\Introsort.BL\Introsort.BL\obj\Debug\net6.0\Introsort.BL.pdb
 C:\Users\kolec\source\repos\Introsort.BL\Introsort.BL\obj\Debug\net6.0\ref\Introsort.BL.dll
+C:\code\C#\Introsort\Introsort.BL\bin\Debug\net6.0\Introsort.BL.deps.json
+C:\code\C#\Introsort\Introsort.BL\bin\Debug\net6.0\Introsort.BL.dll
+C:\code\C#\Introsort\Introsort.BL\bin\Debug\net6.0\Introsort.BL.pdb
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.AssemblyInfoInputs.cache
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.AssemblyInfo.cs
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.csproj.CoreCompileInputs.cache
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.dll
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\refint\Introsort.BL.dll
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\Introsort.BL.pdb
+C:\code\C#\Introsort\Introsort.BL\obj\Debug\net6.0\ref\Introsort.BL.dll

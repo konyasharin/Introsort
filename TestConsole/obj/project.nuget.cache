@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xyiSAg56lbXMg9G0kb93nvvTgCQc9RFZi0+zKeLr+qS39GybHPzgNzfyQbHKaeWZbFQms0ZxgWPgPbx6ifUTPA==",
+  "dgSpecHash": "UX2/wLIJCxfO132RFdO5/PaDadhcDX3gTNZR3GTuOCiq/LkrXF+wo+0P+k7L/zMFGACwSWuICi12mAQKYMTzxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\TestConsole\\TestConsole.csproj",
+  "projectFilePath": "C:\\code\\C#\\Introsort\\TestConsole\\TestConsole.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
