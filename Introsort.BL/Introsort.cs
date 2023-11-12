@@ -30,27 +30,33 @@
         /// <param name="reverse">Параметр, определяющий как будет осуществляться сортировка(по неубыванию или невозрастанию).</param>
         /// <param name="key">Функция для вычисления ключа, по которому происходит сортировка.</param>
         /// <param name="cmp">Функция для сравнения двух значений при сортировке</param>
-        public static void IntrosortLoop<T>(T[] a, int start, int end, int depthLimit, bool reverse = false, Delegate? key = null, Comparison<T>? cmp = null)
+        public static void IntrosortLoop<T>(T[] a, int start, int end, int depthLimit, bool reverse = false, Func<T, dynamic>? key = null, Comparison<T>? cmp = null)
         {
             if (cmp == null)
             {
                 cmp = Compares.Instance.Compare;
             }
+
+            if (key == null)
+            {
+                key = Keys.Instance.GetKey;
+            }
+
             if (end - start > MaxCountNumbers)
             {
                 if(depthLimit == 0)
                 {
-                    HeapSort(a, start, end, reverse);
+                    HeapSort(a, start, end, reverse: reverse, cmp: cmp);
                     return; 
                 }
                 depthLimit--;
-                int pivot = Partition(a, start, end, reverse, cmp: cmp);
-                IntrosortLoop(a, 0, pivot - 1, depthLimit, reverse, cmp: cmp);
-                IntrosortLoop(a, pivot + 1, end, depthLimit, reverse, cmp: cmp);
+                int pivot = Partition(a, start, end, reverse: reverse, cmp: cmp);
+                IntrosortLoop(a, 0, pivot - 1, depthLimit, reverse: reverse, key: key, cmp: cmp);
+                IntrosortLoop(a, pivot + 1, end, depthLimit, reverse: reverse, key: key, cmp: cmp);
             }
             else
             {
-                InsertionSort(a, start, end, reverse, cmp: cmp);
+                InsertionSort(a, start, end, reverse: reverse, cmp: cmp);
             }
         }
 
@@ -111,7 +117,7 @@
             // Создание дерева
             for (int i = n / 2 - 1; i >= 0; i--)
             {
-                Heapify(newArray, i, n, reverse, cmp: cmp);
+                Heapify(newArray, i, n, reverse: reverse, cmp: cmp);
             }
 
             // Сортировка массива
@@ -120,7 +126,7 @@
                 T keepElement = newArray[i];
                 newArray[i] = newArray[0];
                 newArray[0] = keepElement;
-                Heapify(newArray, 0, i, reverse, cmp: cmp);
+                Heapify(newArray, 0, i, reverse: reverse, cmp: cmp);
             }
 
             // В старый массив вносим изменения
@@ -145,8 +151,7 @@
             int leftElementIndex = i * 2 + 1;
             int rightElementIndex = i * 2 + 2;
             int largestIndex = i;
-
-            if((leftElementIndex < n && cmp!(a[leftElementIndex], a[largestIndex]) > 0 && reverse is false) ||
+            if ((leftElementIndex < n && cmp!(a[leftElementIndex], a[largestIndex]) > 0 && reverse is false) ||
                 (leftElementIndex < n && cmp!(a[leftElementIndex], a[largestIndex]) < 0 && reverse))
             {
                 largestIndex = leftElementIndex;
@@ -164,7 +169,7 @@
                 a[i] = a[largestIndex];
                 a[largestIndex] = keepElement;
 
-                Heapify(a, largestIndex, n, reverse, cmp: cmp);
+                Heapify(a, largestIndex, n, reverse: reverse, cmp: cmp);
             }
         }
 

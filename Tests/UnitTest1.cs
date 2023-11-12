@@ -50,5 +50,52 @@ namespace Tests
                 Assert.AreEqual(keepArray[i], array[i]);
             }
         }
+
+        [DataTestMethod]
+        #region Tests 3
+        [DataRow(new string[] { })]
+        [DataRow(new[] { "a" })]
+        [DataRow(new[] { "a", "b", "c", "d", "e" })]
+        [DataRow(new[] { "aa", "aa", "aa", "ab", "ac", "b" })]
+        [DataRow(new[] { "e", "d", "c", "b", "a" })]
+        [DataRow(new[] { "abc", "a", "foo", "bar", "booz", "baz", "spam", "love" })]
+        [DataRow(new[] { "abc", "abc", "abc" })]
+        [DataRow(new[] { "" })]
+        #endregion
+        public void TestSortStringsIncrease(string[] array)
+        {
+            string[] keepArray = new string[array.Length];
+            array.CopyTo(keepArray, 0);
+            Array.Sort(keepArray);
+            Introsort.BL.Introsort.IntrosortLoop(array, 0, array.Length - 1, Introsort.BL.Introsort.CalculateDepthRecursion(array.Length));
+            for (var i = 0; i < array.Length; i++)
+            {
+                Assert.AreEqual(keepArray[i], array[i]);
+            }
+        }
+
+        [DataTestMethod]
+        #region Tests 4
+        [DataRow(new string[] { })]
+        [DataRow(new[] { "a" })]
+        [DataRow(new[] { "a", "b", "c", "d", "e" })]
+        [DataRow(new[] { "aa", "aa", "aa", "ab", "ac", "b" })]
+        [DataRow(new[] { "e", "d", "c", "b", "a" })]
+        [DataRow(new[] { "abc", "a", "foo", "bar", "booz", "baz", "spam", "love" })]
+        [DataRow(new[] { "abc", "abc", "abc" })]
+        [DataRow(new[] { "" })]
+        #endregion
+        public void TestSortStringsDecrease(string[] array)
+        {
+            string[] keepArray = new string[array.Length];
+            array.CopyTo(keepArray, 0);
+            Array.Sort(keepArray);
+            Array.Reverse(keepArray);
+            Introsort.BL.Introsort.IntrosortLoop(array, 0, array.Length - 1, Introsort.BL.Introsort.CalculateDepthRecursion(array.Length), reverse: true);
+            for (var i = 0; i < array.Length; i++)
+            {
+                Assert.AreEqual(keepArray[i], array[i]);
+            }
+        }
     }
 }

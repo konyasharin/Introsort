@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "XK6d7BUsUzQ7PMzuUwdEjD+WJRCPn1cWEyvsec5B2/qzc5ZmrWoML6uu37ZmI7eMfT0658OIOiv41fLZRiHWuQ==",
+  "dgSpecHash": "ePEyiNa3ThqADnWpHDik1cjbSX2hOkBkLwFRpQWRrqPdYOgxg2Mka8t67DEUZcfFxlzpzVXvZacPkzBq/16Dug==",
   "success": true,
-  "projectFilePath": "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj",
+  "projectFilePath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

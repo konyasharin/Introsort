@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "UX2/wLIJCxfO132RFdO5/PaDadhcDX3gTNZR3GTuOCiq/LkrXF+wo+0P+k7L/zMFGACwSWuICi12mAQKYMTzxg==",
+  "dgSpecHash": "YP48zYM+gJ+tgtUcgQtD3VABtKP0YduYCsl/cfmrLjRoA8t5jEqqj2/CVd8GNPTqmvkO+QFDG33dxVBTLkduBQ==",
   "success": true,
-  "projectFilePath": "C:\\code\\C#\\Introsort\\TestConsole\\TestConsole.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\TestConsole\\Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\kolec\\.nuget\\packages\\commandlineparser\\2.9.1\\commandlineparser.2.9.1.nupkg.sha512"
+  ],
   "logs": []
 }

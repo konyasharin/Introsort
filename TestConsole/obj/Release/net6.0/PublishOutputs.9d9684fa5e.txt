@@ -1,0 +1,8 @@
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Console.exe
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Console.dll
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Console.deps.json
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Console.runtimeconfig.json
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Console.pdb
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\CommandLine.dll
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Introsort.BL.dll
+C:\Users\kolec\source\repos\Introsort.BL\TestConsole\bin\Release\net6.0\publish\Introsort.BL.pdb

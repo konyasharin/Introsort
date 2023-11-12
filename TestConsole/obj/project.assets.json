@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "CommandLineParser/2.9.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/CommandLine.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Introsort.BL/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -15,6 +28,28 @@
     }
   },
   "libraries": {
+    "CommandLineParser/2.9.1": {
+      "sha512": "OE0sl1/sQ37bjVsPKKtwQlWDgqaxWgtme3xZz7JssWUzg5JpMIyHgCTY9MVMxOg48fJ1AgGT3tgdH5m/kQ5xhA==",
+      "type": "package",
+      "path": "commandlineparser/2.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CommandLine20.png",
+        "License.md",
+        "README.md",
+        "commandlineparser.2.9.1.nupkg.sha512",
+        "commandlineparser.nuspec",
+        "lib/net40/CommandLine.dll",
+        "lib/net40/CommandLine.xml",
+        "lib/net45/CommandLine.dll",
+        "lib/net45/CommandLine.xml",
+        "lib/net461/CommandLine.dll",
+        "lib/net461/CommandLine.xml",
+        "lib/netstandard2.0/CommandLine.dll",
+        "lib/netstandard2.0/CommandLine.xml"
+      ]
+    },
     "Introsort.BL/1.0.0": {
       "type": "project",
       "path": "../Introsort.BL/Introsort.BL.csproj",
@@ -23,23 +58,24 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "CommandLineParser >= 2.9.1",
       "Introsort.BL >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Николай\\.nuget\\packages\\": {}
+    "C:\\Users\\kolec\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\code\\C#\\Introsort\\TestConsole\\TestConsole.csproj",
-      "projectName": "TestConsole",
-      "projectPath": "C:\\code\\C#\\Introsort\\TestConsole\\TestConsole.csproj",
-      "packagesPath": "C:\\Users\\Николай\\.nuget\\packages\\",
-      "outputPath": "C:\\code\\C#\\Introsort\\TestConsole\\obj\\",
+      "projectUniqueName": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\TestConsole\\Console.csproj",
+      "projectName": "Console",
+      "projectPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\TestConsole\\Console.csproj",
+      "packagesPath": "C:\\Users\\kolec\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\TestConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Николай\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\kolec\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +89,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj": {
-              "projectPath": "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj"
+            "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj": {
+              "projectPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj"
             }
           }
         }
@@ -68,6 +104,12 @@
     "frameworks": {
       "net6.0": {
         "targetAlias": "net6.0",
+        "dependencies": {
+          "CommandLineParser": {
+            "target": "Package",
+            "version": "[2.9.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -84,7 +126,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

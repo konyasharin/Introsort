@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\code\\C#\\Introsort\\Tests\\Tests.csproj": {}
+    "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Tests\\Tests.csproj": {}
   },
   "projects": {
-    "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj": {
+    "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj",
+        "projectUniqueName": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj",
         "projectName": "Introsort.BL",
-        "projectPath": "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj",
-        "packagesPath": "C:\\Users\\Николай\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\C#\\Introsort\\Introsort.BL\\obj\\",
+        "projectPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj",
+        "packagesPath": "C:\\Users\\kolec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Николай\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kolec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -55,21 +55,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\code\\C#\\Introsort\\Tests\\Tests.csproj": {
+    "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Tests\\Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\code\\C#\\Introsort\\Tests\\Tests.csproj",
+        "projectUniqueName": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Tests\\Tests.csproj",
         "projectName": "Tests",
-        "projectPath": "C:\\code\\C#\\Introsort\\Tests\\Tests.csproj",
-        "packagesPath": "C:\\Users\\Николай\\.nuget\\packages\\",
-        "outputPath": "C:\\code\\C#\\Introsort\\Tests\\obj\\",
+        "projectPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Tests\\Tests.csproj",
+        "packagesPath": "C:\\Users\\kolec\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Николай\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\kolec\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -83,8 +83,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj": {
-                "projectPath": "C:\\code\\C#\\Introsort\\Introsort.BL\\Introsort.BL.csproj"
+              "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj": {
+                "projectPath": "C:\\Users\\kolec\\source\\repos\\Introsort.BL\\Introsort.BL\\Introsort.BL.csproj"
               }
             }
           }
@@ -132,7 +132,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
